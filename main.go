@@ -63,11 +63,9 @@ func buildFrameTags(f teleinfo.Frame) []string {
 }
 
 func exportFrames(dsd *statsd.Client, framesChan chan teleinfo.Frame) {
-	counters := map[string]string{
+	gauges := map[string]string{
 		"HCHC": "counter_low_price_kwh",
 		"HCHP": "counter_full_price_kwh",
-	}
-	gauges := map[string]string{
 		"PAPP":  "power_va",
 		"IINST": "current_amps",
 	}
@@ -76,17 +74,6 @@ func exportFrames(dsd *statsd.Client, framesChan chan teleinfo.Frame) {
 		tags := buildFrameTags(f)
 		if tags == nil {
 			continue
-		}
-
-		for key, metric := range counters {
-			value, ok := f.GetUIntField(key)
-			if !ok {
-				s, _ := f.GetStringField(key)
-				log.WithFields(log.Fields{"field_name": key, "field_value": s, "metric": metric}).Warn("Cannot extract metric value from frame")
-				continue
-			}
-			log.WithFields(log.Fields{"value": value, "metric": metric, "namespace": dsd.Namespace, "tags": tags}).Debug("Sending dogstatsd counter")
-			dsd.Count(metric, int64(value), tags, 1)
 		}
 
 		for key, metric := range gauges {
