@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"io"
 	"github.com/DataDog/datadog-go/statsd"
 	"github.com/j-vizcaino/goteleinfo"
 	log "github.com/sirupsen/logrus"
@@ -25,9 +26,12 @@ func readFrames(reader teleinfo.Reader, framesChan chan teleinfo.Frame) {
 		f, err := reader.ReadFrame()
 		if err != nil {
 			log.WithField("error", err).Warn("Teleinfo frame read failed")
-		} else {
-			framesChan <- f
+			if err == io.EOF {
+				log.Fatal("Device handle is closed, stopping application")
+			}
+			continue
 		}
+		framesChan <- f
 	}
 }
 
