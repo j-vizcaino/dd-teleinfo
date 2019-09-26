@@ -1,0 +1,12 @@
+github.com/DataDog/datadog-go v0.0.0-20180330214955-e67964b4021a h1:zpQSzEApXM0qkXcpdjeJ4OpnBWhD/X8zT/iT1wYLiVU=
+github.com/DataDog/datadog-go v0.0.0-20180330214955-e67964b4021a/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
+github.com/j-vizcaino/goteleinfo v0.0.0-20180721144338-b26658d7115b h1:R2T3jRrVbguu6nt2k+p+qBLs2yjS5jCVbtdrql40AuY=
+github.com/j-vizcaino/goteleinfo v0.0.0-20180721144338-b26658d7115b/go.mod h1:37oqQilPXTWwR1sKgQDg4eDAX1hCI2r/NXLpUL3UKmA=
+github.com/sirupsen/logrus v1.0.6 h1:hcP1GmhGigz/O7h1WVUM5KklBp1JoNS9FggWKdj/j3s=
+github.com/sirupsen/logrus v1.0.6/go.mod h1:pMByvHTf9Beacp5x1UXfOR9xyW/9antXMhjMPG0dEzc=
+github.com/tarm/serial v0.0.0-20180114052751-eaafced92e96 h1:pLss0TM/G46eE2p8NIRYIlB12vrPvWXiqDoCKA52wwQ=
+github.com/tarm/serial v0.0.0-20180114052751-eaafced92e96/go.mod h1:kDXzergiv9cbyO7IOYJZWg1U88JhDg3PB6klq9Hg2pA=
+golang.org/x/crypto v0.0.0-20180718160520-a2144134853f h1:lRy+hhwk7YT7MsKejxuz0C5Q1gk6p/QoPQYEmKmGFb8=
+golang.org/x/crypto v0.0.0-20180718160520-a2144134853f/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
+golang.org/x/sys v0.0.0-20180715085529-ac767d655b30 h1:4bYUqrXBoiI7UFQeibUwFhvcHfaEeL75O3lOcZa964o=
+golang.org/x/sys v0.0.0-20180715085529-ac767d655b30/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
